@@ -7,14 +7,16 @@ function Pagination({postsPerPage,totalPost,setCurrentPage,currentPage}) {
         
     }
   return (
-    <div>
+    <div className='w-screen bg-slate-100 flex my-5 justify-center'>
         {
             page.map((page,index)=>(
-                <button key={index} onClick={()=>setCurrentPage(page)}className={currentPage==page?bg-red-500:""}>
+                <div className='bg-orange-200 mx-3 px-1'>
+                <button className='text-lg' key={index} onClick={()=>setCurrentPage(page)}>
                     {page}
                 </button>
+                </div>
 
-            )).slice(0,50)
+            )).slice(0,20)
         }
     </div>
   )

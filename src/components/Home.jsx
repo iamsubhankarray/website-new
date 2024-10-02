@@ -12,9 +12,7 @@ const Home = () => {
   const [currentPage,setCurrentPage]=useState(1)
   const [perPage,setPerPage]=useState(18)
   const logged = useSelector(state=>state.user)
-  const filteredData = products.filter((item) =>
-    item.title.toLowerCase().includes(search.toLowerCase())
-  );
+ 
   const getData = async () => {
     await axios
       .get("https://api.escuelajs.co/api/v1/products")
@@ -28,6 +26,10 @@ const Home = () => {
  const lastPostIndex =currentPage*perPage
  const firstPostIndex=lastPostIndex-perPage
  const currentPosts =products.slice(firstPostIndex,lastPostIndex)
+ 
+ const filteredData = currentPosts.filter((item) =>
+  item.title.toLowerCase().includes(search.toLowerCase())
+);
   
 
   return (
@@ -50,7 +52,7 @@ const Home = () => {
       <Slider products={products} />
       </div>
       <div >
-        <Product item={currentPosts} />
+        <Product item={filteredData} />
         <Pagination totalPost={products.length}
         postsPerPage={perPage}
         setCurrentPage={setCurrentPage}
