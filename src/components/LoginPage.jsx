@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import NavBar from './NavBar'
-import { account } from "../lib/appwrite";
 import { useDispatch } from "react-redux";
 import { logIn_user } from "../redux/userSclice";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -12,9 +12,15 @@ const LoginPage = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  async function getLogin(email, password) {
+  async function getLogin() {
+    const data={
+      email,
+      password,
+    }
     try {
-      await account.createEmailPasswordSession(email,password);
+      await axios.post("http://192.168.0.111:8080/login",data)
+      .then(res=>console.log(res.data))
+      .catch(error=>console.log(error))
       dispatch(logIn_user(await account.get('userId')));
 
       setEmail("")
@@ -58,7 +64,7 @@ const LoginPage = () => {
           value={password}
           onChange={(text) => setpassword(text.target.value)}
           />
-        <button onClick={()=>getLogin(email,password)} className="bg-green-500 hover:bg-green-200 w-20 h-10">
+        <button onClick={()=>getLogin} className="bg-green-500 hover:bg-green-200 w-20 h-10">
           login 
         </button>
         <div className="my-5 flex">

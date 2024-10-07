@@ -26,7 +26,7 @@ const Product = ({ item }) => {
         <div onClick={()=>handleClick(item)} key={index}>
           <div  className="bg-orange-100 rounded-lg w-72 m-2 py-10 ">
             <div className="flex justify-center items-center rounded-md  pt-5">
-              <img src={item.images} className=" h-52 " />
+              <img src={item.image} className=" h-52 " />
             </div>
             <div className=" p-2 flex flex-col items-center">
               <div className="text-lg font-bold">{item.title}</div>

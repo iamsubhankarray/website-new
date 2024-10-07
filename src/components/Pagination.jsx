@@ -10,7 +10,7 @@ function Pagination({postsPerPage,totalPost,setCurrentPage,currentPage}) {
     <div className='w-screen bg-slate-100 flex my-5 justify-center'>
         {
             page.map((page,index)=>(
-                <div className='bg-orange-200 mx-3 px-1'>
+                <div className='bg-orange-200 mx-3 px-1'key={index}>
                 <button className='text-lg' key={index} onClick={()=>setCurrentPage(page)}>
                     {page}
                 </button>

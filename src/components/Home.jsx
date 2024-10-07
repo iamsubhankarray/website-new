@@ -15,7 +15,7 @@ const Home = () => {
  
   const getData = async () => {
     await axios
-      .get("https://api.escuelajs.co/api/v1/products")
+      .get("https://fakestoreapi.com/products")
       .then((res) => setProducts(res.data))
       .catch((err) => console.log(err));
   };
