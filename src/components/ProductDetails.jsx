@@ -12,26 +12,28 @@ const ProductDetails = () => {
     <>
     <NavBar/>
     
-    <div className='flex justify-center items-center mx-52 '>
+    <div className='flex '>
 
-    <div className=' bg-orange-500
-     flex flex-col justify-center
-     items-center 
-     w-96
+    <div className='
+     flex flex-col 
+    
      rounded-3xl
-     overflow-auto
-     m-5 px-5'>
+     '>
       <img
-      className='w-60'
+      className='w-40'
+      
       src={location.state.image}/>
-      <h1 className='font-extrabold text-xl text-center'>{location.state.title}</h1>
-      <h5 className='font-bold text-m'>{location.state.description}</h5>
-      <h5 className='font-bold text-2xl'>${location.state.price}</h5>
-      <button className='bg-lime-300  rounded-md m-5 shadow-lg'onClick={dispatch(add_to_cart(location.state))}>
-        <span className='text-2xl font-bold'>add to cart</span>
-      </button>
-
     </div>
+    <div className='flex flex-col  '>
+
+      <h1 className='font-extrabold text-xl text-center'>{location.state.title}</h1>
+      <h5 className='font-medium text-s'>{location.state.description}</h5>
+      <h5 className='font-bold text-2xl'>${location.state.price}</h5>
+      <button className='bg-lime-300  rounded-md  shadow-lg w-40'onClick={()=>dispatch(add_to_cart(location.state))}>
+        <span className=' font-bold'>add to cart</span>
+      </button>
+    </div>
+
       </div>
       </>
   )

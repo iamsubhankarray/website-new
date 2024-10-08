@@ -6,25 +6,23 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setpassword] = useState("");
+  const [userData, setuserData] = useState({email:"",password:""});
+ 
   const [logged, setLogged] = useState(null);
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
   async function getLogin() {
-    const data={
-      email,
-      password,
-    }
+  
     try {
-      await axios.post("http://192.168.0.111:8080/login",data)
+      await axios.post("http://192.168.0.111:8080/login",userData)
       .then(res=>console.log(res.data))
       .catch(error=>console.log(error))
       dispatch(logIn_user(await account.get('userId')));
+      console.log(userData);
+      
 
-      setEmail("")
-      setpassword("")
+      setuserData({email:"",password:""})
     } catch (error) {
       console.log(error)
       
@@ -47,8 +45,8 @@ const LoginPage = () => {
           name=""
           id="email"
           placeholder="enter your email"
-          value={email}
-          onChange={(text) => setEmail(text.target.value)}
+          value={userData.email}
+          onChange={(text) => setuserData({...userData,email:text.target.value})}
           />
         <input
           className="w-3/4
@@ -61,10 +59,10 @@ const LoginPage = () => {
           name=""
           id="password"
           placeholder="enter your password"
-          value={password}
-          onChange={(text) => setpassword(text.target.value)}
+          value={userData.password}
+          onChange={(text) => setuserData({...userData, password:text.target.value})}
           />
-        <button onClick={()=>getLogin} className="bg-green-500 hover:bg-green-200 w-20 h-10">
+        <button onClick={()=>getLogin()} className="bg-green-500 hover:bg-green-200 w-20 h-10">
           login 
         </button>
         <div className="my-5 flex">

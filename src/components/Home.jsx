@@ -47,10 +47,10 @@ const Home = () => {
       </div>
       </div>
      
-      <div className="p-0">
+      {/* <div className="p-0">
 
       <Slider products={products} />
-      </div>
+      </div> */}
       <div >
         <Product item={filteredData} />
         <Pagination totalPost={products.length}

@@ -26,7 +26,7 @@ function CartPage() {
                 <div
                   key={index}
                   className="flex  justify-center items-center" >
-                  <img src={item.images} className="w-2/12" />
+                  <img src={item.image} className="w-2/12" />
                   <div>
 
                   <h2 className="font-2xl">{item.title.substring(0, 50)}</h2>

@@ -6,10 +6,10 @@ const app = express()
 const port = 8080
 
 mongoose.connect("mongodb+srv://iamsubhankarray:iamtheknight@cluster0.nvqbu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/user")
-.then(console.log("db connected"))
-.catch(error=>console.log("error while connecting to db "))
+    .then(console.log("db connected"))
+    .catch(error => console.log("error while connecting to db "))
 
-app.use(express.urlencoded({extends:true}))
+app.use(express.urlencoded({ extends: true }))
 
 
 
@@ -30,21 +30,30 @@ app.post("/register", async (req, res) => {
         res.send("registered successfully")
     } catch (error) {
         console.log(error);
+        res.send("unseccessfull")
 
 
     }
-    res.send("unseccessfull")
 
 
 }
-    
+
 )
 
 
 
-app.post("/login", (req, res) => {
+app.post("/login", async (req, res) => {
     const { email, password } = req.body
-    res.send()
+    const verifyUser = await user.findOne({ email, password, })
+    if (!verifyUser) {
+        res.json({ message: "user not found,Please Register", redirect: "no" })
+
+    } else {
+        res.json({ message: "login successfull", verifyUser, redirect: "OK" })
+        // console.log(verifyUser);
+
+
+    }
 
 })
 
