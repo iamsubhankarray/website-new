@@ -15,11 +15,11 @@ const LoginPage = () => {
   async function getLogin() {
   
     try {
-      await axios.post("http://192.168.0.111:8080/login",userData)
-      .then(res=>console.log(res.data))
+      await axios.post("http://192.168.0.111:8080/login",{userData})
+      .then(res=>alert(res.data.message))
       .catch(error=>console.log(error))
-      dispatch(logIn_user(await account.get('userId')));
-      console.log(userData);
+      .finally(console.log(userData));
+      
       
 
       setuserData({email:"",password:""})
