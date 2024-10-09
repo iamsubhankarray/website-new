@@ -53,10 +53,10 @@ const Home = () => {
       </div> */}
       <div >
         <Product item={filteredData} />
-        <Pagination totalPost={products.length}
+        {/* <Pagination totalPost={products.length}
         postsPerPage={perPage}
         setCurrentPage={setCurrentPage}
-        currentPage={currentPage}/>
+        currentPage={currentPage}/> */}
       </div>
       
     </>
