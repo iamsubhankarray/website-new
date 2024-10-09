@@ -78,21 +78,7 @@ const RegisterPage = () => {
             value={password}
             onChange={(text) => setpassword(text.target.value)}
           />
-          <input
-            className="w-3/4
-          text-center
-          shadow-lg
-          h-10
-          rounded-lg
-          my-2"
-            type="text"
-            name="address"
-            id="address"
-            placeholder="enter your address"
-            value={address}
-            onChange={(text) => setaddress(text.target.value)}
-          />
-          <input
+             <input
             className="w-3/4
           text-center
           shadow-lg
@@ -106,6 +92,23 @@ const RegisterPage = () => {
             value={mobile}
             onChange={(text) => setmobile(text.target.value)}
           />
+          <textarea
+            className="w-3/4
+            text-wrap
+            
+          text-center
+          shadow-lg
+          h-14
+          rounded-lg
+          my-2"
+            type="text"
+            name="address"
+            id="address"
+            placeholder="enter your address"
+            value={address}
+            onChange={(text) => setaddress(text.target.value)}
+          />
+       
           <button
             onClick={() => register}
             className="bg-green-500 hover:bg-green-200 w-20 h-10"

@@ -19,7 +19,7 @@ function CartPage() {
     <NavBar/>
     </div>
       <div className="w-screen  flex flex-col justify-center items-center">
-        <div className="  justify-center items-center">
+        <div className="  justify-center items-center my-10">
           {cartItem.length>0?
             cartItem.map((item, index) => {
               return (
