@@ -2,6 +2,7 @@ import express from "express";
 import user from "./Models/userSchema.js";
 import mongoose from "mongoose";
 import cors from 'cors';
+import bodyParser from 'body-parser'
 
 const app = express()
 const port = 8080
@@ -10,6 +11,7 @@ mongoose.connect("mongodb+srv://iamsubhankarray:iamtheknight@cluster0.nvqbu.mong
     .then(console.log("db connected"))
     .catch(error => console.log("error while connecting to db "))
 app.use(cors())
+app.use(bodyParser.json())
 app.use(express.urlencoded({ extended: true }))
 
 

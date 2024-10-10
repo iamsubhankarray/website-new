@@ -17,15 +17,19 @@ const RegisterPage = () => {
     address,
     mobile,
   };
-  const register = async () => {
-    try {
-      await axios
-        .post("http://192.168.0.111:8080/register", data)
-        .then((res) => console.log(res.data))
-        .catch((error) => console.log(error));
-    } catch (error) {
-      console.log(error);
-    }
+  const register = () => {
+    
+      axios.post('http://192.168.0.111:8080/register',data)
+      .then(res=>alert(res.data))
+      .then({
+        name:"",
+        email:"",
+        password:"",
+        address:"",
+        mobile:"",
+      })
+      .catch(err=>console.log(err))
+ 
   };
   return (
     <>
@@ -110,7 +114,7 @@ const RegisterPage = () => {
           />
        
           <button
-            onClick={() => register}
+            onClick={() => register()}
             className="bg-green-500 hover:bg-green-200 w-20 h-10"
           >
             Register
