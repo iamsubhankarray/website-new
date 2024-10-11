@@ -24,7 +24,7 @@ const Product = ({ item }) => {
     >
       {item.map((item, index) => (
         <div onClick={()=>handleClick(item)} key={index}>
-          <div  className="bg-orange-100 rounded-lg w-72 m-2 py-10 ">
+          <div  className="bg-slate-200 rounded-lg w-72 m-2 py-10 ">
             <div className="flex justify-center items-center rounded-md  pt-5">
               <img src={item.image} className=" h-52 " />
             </div>
@@ -33,14 +33,14 @@ const Product = ({ item }) => {
               <div className="text-sm font-semibold">
                 {item.description.substring(0, 150) + "..."}
               </div>
-              <div className="bg-orange-400 w-full  h-12 ">
+              <div className="bg-slate-600 w-full  h-12 ">
                 <div className="text-lg text-center font-medium text-white">
                   ${item.price}
                 </div>
               </div>
               <div >
                 <button onClick={(e)=>handleAddtoCart(e,item)}
-                  className="px-4 py-2 m-2 bg-orange-500 text-white rounded hover:bg-green-600"
+                  className="px-4 py-2 m-2 bg-slate-500 text-white rounded hover:bg-green-600"
                   type="Add to cart"
                 >
                   Add to Cart

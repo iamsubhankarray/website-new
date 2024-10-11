@@ -11,7 +11,7 @@ const NavBar = () => {
   }
   return (
     <div>
-        <ul className='flex justify-end  bg-orange-500 w-screen h-10 text-xl text-white items-center px-10 font-bold'>
+        <ul className='flex justify-end  bg-slate-800 w-screen h-10 text-xl text-white items-center px-10 font-bold'>
             <li className='absolute left-1 lg:font-extrabold font-light text-xs lg:text-xl'onClick={()=>navigate('/')}>e-commerce</li>
           <li className='px-2' onClick={()=>navigate('/')}>home</li>
           <li className='px-2' onClick={()=>navigate("/login")}>account</li>
