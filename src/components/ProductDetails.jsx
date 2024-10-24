@@ -12,27 +12,27 @@ const ProductDetails = () => {
     <>
     <NavBar/>
     
-    <div className='flex '>
+    <div className='grid grid-cols-3'>
 
-    <div className='
-     flex flex-col 
-    
-     rounded-3xl
-     '>
+    <div className='grid col-span-1'>
       <img
-      className='w-40'
+      className='p-5'
       
       src={location.state.image}/>
     </div>
-    <div className='flex flex-col  '>
+    <div className='col-span-2 '>
 
       <h1 className='font-extrabold text-xl text-center'>{location.state.title}</h1>
-      <h5 className='font-medium text-s'>{location.state.description}</h5>
+      <h5 className='font-medium text-s p-5'>{location.state.description}</h5>
       <h5 className='font-bold text-2xl'>${location.state.price}</h5>
-      <button className='bg-lime-300  rounded-md  shadow-lg w-40'onClick={()=>dispatch(add_to_cart(location.state))}>
+    
+
+          <button className='bg-lime-300  rounded-md  shadow-lg w-40'onClick={()=>dispatch(add_to_cart(location.state))}>
         <span className=' font-bold'>add to cart</span>
       </button>
     </div>
+    
+    
 
       </div>
       </>
