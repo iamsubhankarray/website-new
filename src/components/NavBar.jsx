@@ -16,7 +16,7 @@ const NavBar = () => {
           <li className='px-2' onClick={()=>navigate('/')}>home</li>
           <li className='px-2' onClick={()=>navigate("/login")}>account</li>
           
-          <li className='px-2'>  about</li>
+          <li className='px-2' onClick={()=>navigate("/about")}>  about</li>
          
           <li  onClick={gotocart}>
             <div className='flex
